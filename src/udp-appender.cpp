@@ -20,7 +20,7 @@ UDPAppender::UDPAppender(const char* ipaddr, uint16_t port) : _fd(-1)
     switch (event)
     {
       case ARDUINO_EVENT_WIFI_STA_GOT_IP:
-        _addr.sin_addr.s_addr = WiFi.gatewayIP();
+        _addr.sin_addr.s_addr = WiFi.broadcastIP();
         break;
       case ARDUINO_EVENT_WIFI_STA_LOST_IP:
         _addr.sin_addr.s_addr = 0;
